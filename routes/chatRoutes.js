@@ -19,4 +19,3 @@ router.post("/groupremove",protect, removeFromGroup);
 router.post("/groupadd",protect,addToGroup);
 
 module.exports = router;
-

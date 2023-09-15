@@ -5,7 +5,8 @@ const colors = require("colors");
 const chatRoutes = require("./routes/chatRoutes");
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
-
+var cors = require("cors");
+app.use(cors());
 dotenv.config();
 connectDB();
 
