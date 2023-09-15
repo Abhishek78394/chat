@@ -44,7 +44,7 @@ const SideDrawer = ( ) => {
 
       const config = {
         headers: {
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `${user.token}`,
         },
       };
 
@@ -74,7 +74,7 @@ const SideDrawer = ( ) => {
       const config = {
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `${user.token}`,
         },
       };
       const { data } = await axios.post(`https://chat-p24m.onrender.com/api/chat`, { userId }, config);
