@@ -55,7 +55,7 @@ import {
         setLoading(true);
         const config = {
           headers: {
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `${user.token}`,
           },
         };
         const { data } = await axios.get(`https://chat-p24m.onrender.com/api/user?search=${search}`, config);
