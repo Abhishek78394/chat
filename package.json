@@ -16,11 +16,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "client-install": "npm install --prefix views",
-    "client": "npm start --prefix views",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "nodemon server.js"
   },
+  "engines": {
+  "node": ">=14.20.1"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
