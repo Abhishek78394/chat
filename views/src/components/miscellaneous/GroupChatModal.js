@@ -58,7 +58,7 @@ import {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.get(`/api/user?search=${search}`, config);
+        const { data } = await axios.get(`https://chat-p24m.onrender.com/api/user?search=${search}`, config);
         console.log(data);
         setLoading(false);
         setSearchResult(data);
@@ -93,11 +93,11 @@ import {
       try {
         const config = {
           headers: {
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `${user.token}`,
           },
         };
         const { data } = await axios.post(
-          `/api/chat/group`,
+          `https://chat-p24m.onrender.com/api/chat/group`,
           {
             name: groupChatName,
             users: JSON.stringify(selectedUsers.map((u) => u._id)),

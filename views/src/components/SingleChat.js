@@ -49,7 +49,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         setLoading(true);
   
         const { data } = await axios.get(
-          `/api/message/${selectedChat._id}`,
+          `https://chat-p24m.onrender.com/api/message/${selectedChat._id}`,
           config
         );
         setMessages(data);
@@ -81,7 +81,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           };
           setNewMessage("");
           const { data } = await axios.post(
-            "/api/message",
+            "https://chat-p24m.onrender.com/api/message",
             {
               content: newMessage,
               chatId: selectedChat,
