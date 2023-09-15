@@ -25,10 +25,11 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get("/api/chat", config);
+      const { data } = await axios.get("https://chat-p24m.onrender.com/api/chat", config);
       setChats(data);
       console.log(chats,"chats")
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error Occured!",
         description: "Failed to Load the chats",
