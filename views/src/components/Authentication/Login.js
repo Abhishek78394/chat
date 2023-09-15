@@ -11,6 +11,7 @@ const Login = () => {
     const handleClick = () => setShow(!show);
     const toast = useToast();
     const [email, setEmail] = useState();
+    const [user, setUser] = useState();
     const [password, setPassword] = useState();
     const [loading, setLoading] = useState(false);
     // const { setUser } = ChatState();
@@ -36,7 +37,7 @@ const Login = () => {
           },
         };
         const { data } = await axios.post(
-          "/api/user/login",
+          "https://chat-p24m.onrender.com/api/user/login",
           { email, password },
           config
         );
@@ -47,20 +48,23 @@ const Login = () => {
           isClosable: true,
           position: "bottom",
         });
-        // setUser(data);
+        console.log(data,"data")
+        setUser(data);
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
         history.push("/chats");
         console.log("please ::::::")
       } catch (error) {
-        toast({
-          title: "Error Occured!",
-          description: error.response.data.message,
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "bottom",
-        });
+        console.log(error,"errorrerrorrerrorrerrorrerrorrerrorrerrorrerrorrerrorrerrorr")
+        history.push("/");
+        // toast({
+        //   title: "Error Occured!",
+        //   description: error.response.data.message,
+        //   status: "error",
+        //   duration: 5000,
+        //   isClosable: true,
+        //   position: "bottom",
+        // });
         setLoading(false);
       }
     };
